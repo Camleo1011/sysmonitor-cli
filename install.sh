@@ -15,7 +15,10 @@ error() { printf '[!] %s\n' "$*" >&2; }
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 if ! command -v python3 >/dev/null 2>&1; then
-    error "python3 no está instalado. En Fedora: sudo dnf install -y python3 python3-pip"
+    error "python3 no está instalado. Instálalo con el gestor de tu distribución:"
+    error "  Fedora:          sudo dnf install -y python3 python3-pip"
+    error "  Arch Linux:      sudo pacman -S --needed python python-pip"
+    error "  Debian/Ubuntu:   sudo apt install -y python3 python3-pip python3-venv"
     exit 1
 fi
 
@@ -37,6 +40,7 @@ else
     info "Creando entorno virtual en ${VENV_DIR}..."
     if ! python3 -m venv "${VENV_DIR}"; then
         error "No se pudo crear el entorno virtual (¿falta el módulo venv?)."
+        error "En Debian/Ubuntu: sudo apt install -y python3-venv"
         exit 1
     fi
 fi
