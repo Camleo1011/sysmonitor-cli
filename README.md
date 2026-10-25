@@ -17,10 +17,25 @@ y envía alertas a un webhook (Slack o Discord) cuando se superan umbrales confi
 - Python 3.14 o superior
 - Dependencias de runtime: `psutil`, `requests`
 
-## Instalación en Fedora
+## Instalación
+
+### 1. Requisitos del sistema
+
+Instala Python, pip y git con el gestor de tu distribución. Se necesita
+**Python 3.14 o superior**; si tu distro trae una versión anterior, instala una
+más reciente antes de continuar.
+
+| Distribución        | Comando                                                   |
+|---------------------|-----------------------------------------------------------|
+| Fedora              | `sudo dnf install -y python3 python3-pip git`             |
+| Arch Linux          | `sudo pacman -S --needed python python-pip git`           |
+| Debian / Ubuntu     | `sudo apt install -y python3 python3-pip python3-venv git`|
+
+En Debian/Ubuntu el paquete `python3-venv` es necesario para crear el entorno virtual.
+
+### 2. Instalar SysMonitor
 
 ```bash
-sudo dnf install -y python3 python3-pip git
 git clone https://github.com/Camleo1011/sysmonitor-cli.git
 cd sysmonitor-cli
 chmod +x install.sh
