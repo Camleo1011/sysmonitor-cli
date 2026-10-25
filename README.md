@@ -21,7 +21,7 @@ y envía alertas a un webhook (Slack o Discord) cuando se superan umbrales confi
 
 ```bash
 sudo dnf install -y python3 python3-pip git
-git clone <url-del-repositorio>
+git clone https://github.com/Camleo1011/sysmonitor-cli.git
 cd sysmonitor-cli
 chmod +x install.sh
 ./install.sh
